@@ -7,7 +7,11 @@
     <style>
       html, body {
         margin: 0;
-        padding: 1rem;
+        padding: 0;
+        font-size: 16px;
+      }
+      body {
+        padding: 0.5rem;
       }
       h1 {
         margin-top: 0;
@@ -17,6 +21,15 @@
       }
       .ip {
         font-size: 2rem;
+      }
+      .small {
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+      }
+      @media (min-width: 768px) {
+        body {
+          padding: 1.5rem;
+        }
       }
     </style>
   </head>
@@ -48,7 +61,7 @@
         </a>
       </div>
       <br>
-      <div>On iOS &amp; Android you are only allowed to change your DNS while on WiFi. You should start a class action lawsuit to let the carriers (and hardware manufacturers) know that this is bullshit and probably illegal. It requires a bit more effort but it <i>is</i> still possible to get custom DNS working on these devices by using a VPN "on-demand" configuration profile (note that this technique doesn't actually use a VPN to route any traffic and you can remove this profile at any time).</div>
+      <div>On iOS &amp; Android you are only allowed to change your DNS while on WiFi. You should start a class action lawsuit to let the carriers (and hardware manufacturers) know that this is bullshit and probably illegal. It requires a bit more effort but it <i>is</i> still possible to get custom DNS working on these devices by using a VPN "on-demand" configuration profile*:</div>
       <div>
         <a href=/tv.smpc.dns.mobileconfig target=_blank>
           <span>Click here to setup on iOS</span>
@@ -56,6 +69,7 @@
           <span>here to check out an Android app</span>
         </a>
       </div>
+      <div class=small>*Note that this technique doesn't actually use a VPN to route any traffic and that you can remove this profile at any time.</div>
       <br>
       <div>Let us know how insanely stupid you think this idea is at <a href=mailto:info@smpc.tv>info@smpc.tv</a>.</div>
     </div>
