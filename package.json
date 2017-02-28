@@ -1,0 +1,13 @@
+{
+  "name": "dns.smpc.tv",
+  "version": "1.0.0",
+  "description": "SMPC DNS",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "native-dns-packet": "^0.1.1"
+  },
+  "author": "jesse.tane@gmail.com",
+  "license": "UNLICENSED"
+}
