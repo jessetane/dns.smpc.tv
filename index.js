@@ -41,7 +41,6 @@ var records = {
   }
 }
 var requests = {}
-var message = new Buffer(1024)
 
 server.on('message', (msg, rinfo) => {
   var packet = DNSPacket.parse(msg)
@@ -79,6 +78,7 @@ server.on('message', (msg, rinfo) => {
     }
     packet.header.qr = 1
     packet.header.ra = 1
+    var message = new Buffer(2048)
     var size = DNSPacket.write(message, packet)
     server.send(message, 0, size, rinfo.port, rinfo.address, err => {
       if (err) {
@@ -92,6 +92,7 @@ server.on('message', (msg, rinfo) => {
     requests[rid] = rinfo
     rinfo.originalId = packet.header.id
     packet.header.id = rid
+    message = new Buffer(2048)
     size = DNSPacket.write(message, packet)
     google.send(message, 0, size, 53, '8.8.8.8', err => {
       if (err) throw err
@@ -112,6 +113,7 @@ google.on('message', msg => {
   } else {
     delete requests[id]
     packet.header.id = rinfo.originalId
+    var message = new Buffer(2048)
     var size = DNSPacket.write(message, packet)
   }
 
